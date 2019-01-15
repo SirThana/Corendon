@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
+body {
+    background: url("../img/background.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    zoom: 90%;
+    font-family: sans-serif;
+}
+
+header::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.text{
+    font-size: 18px;
+    text-align: left;
+}
+
+h1{
+    text-align: left;
+}
+
+.logo{
+    float: left;
+    width: auto;
+    height: 65px;
+}
+
+.logo2{
+    float: left;
+    width: auto;
+    height: 65px;
+    padding-top: 5px;
+    padding-left: 20px;
+}
+
+#container{
+    overflow:hidden;
+    border-width:1px;
+    border-style:solid;
+    border:3px solid #d81e05;
+    background: rgba(255, 255, 255, 0.966);
+    margin-left: 80vh;
+    margin-right: 40vh;
+    margin-top: 8vh;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+
+.login{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 10px 0;
+    display: inline-block;
+    border-radius: 2px;
+    box-sizing: border-box;
+}
+
+#checkbox{
+    border-radius: 2px;
+    box-sizing: border-box;
+    cursor: pointer;
+
+}
+
+#button {
+    border: none;
+    font-weight: bold;
+    background-color: #d81e05;
+    color: white;
+    transition: all 0.1s ease;
+    width: 100%;
+    padding: 10px;
+    border-radius: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+* {
+    font-family: arial;
+}
+
+
+.languagepicker {
+    background: rgba(255, 255, 255, 0.966);
+    border-width:1px;
+    border-style:solid;
+    border:3px solid #d81e05;
+    display: inline-block;
+    padding: 0;
+    height: 40px;
+    overflow: hidden;
+    transition: all .3s ease;
+    margin: 0 50px 10px 0;
+    vertical-align: top;
+    font-family: arial;
+    border-radius: 5px;
+    margin-left: 160vh;
+    margin-top: 20px;
+    position: absolute;
+}
+
+.languagepicker:hover {
+    height: 81px;
+}
+
+.languagepicker a{
+    color: #000;
+    text-decoration: none;
+}
+
+.languagepicker li {
+    display: block;
+    padding: 0px 20px;
+    line-height: 40px;
+    border-top: 1px solid #EEE;
+}
+
+.languagepicker li:hover{
+    background: rgba(255, 255, 255, 0.966);
+}
+
+.languagepicker a:first-child li {
+    border: none;
+    background: rgba(255, 255, 255, 0.966);
+}
+
+.languagepicker li img {
+    margin-right: 5px;
+}
+
+.roundborders {
+    border-radius: 5px;
+}
+
+.large:hover {
+    height: 163px;
+}
