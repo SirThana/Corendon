@@ -83,6 +83,7 @@ public class Servlet extends HttpServlet {
             String ipAddress = request.getRemoteAddr();
             Process p;
             p = Runtime.getRuntime().exec("sudo iptables -I FORWARD -s " + ipAddress + " -j DROP");
+            request.getRequestDispatcher("logout.jsp").forward(request, response);
 
         }else{
 //            response.sendRedirect("http://www.corendon.nl");
