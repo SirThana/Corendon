@@ -1,5 +1,6 @@
 package Corendon;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -62,11 +63,19 @@ public class Servlet extends HttpServlet {
         resultApi = outputArray.toString();
 
         String checkTicket = "\"ticketStatus\":\"Valid\"";
+        String page = "";
+        String remoteClient = request.getRemoteAddr();
+
+        request.setAttribute("remoteClient",remoteClient);
+
+
 
         if (resultApi.contains(checkTicket)) {
 
             String ipAddress = request.getRemoteAddr();
             Process p;
+            page = "loginSucces.jsp";
+
             try {
                 p = Runtime.getRuntime().exec("sudo iptables -t nat -I PREROUTING -s "
                         + ipAddress + " -j ACCEPT");
@@ -76,19 +85,25 @@ public class Servlet extends HttpServlet {
                 System.out.println(e);
             }
         } else {
-            response.sendRedirect("index.jsp");
+            page = "index.jsp";
+
+//            return;
+//            request.getRequestDispatcher("index.jsp").forward(request, response);
+
+
         }
 
         if(request.getParameter("Logout") != null){
             String ipAddress = request.getRemoteAddr();
             Process p;
             p = Runtime.getRuntime().exec("sudo iptables -I FORWARD -s " + ipAddress + " -j DROP");
-            request.getRequestDispatcher("logout.jsp").forward(request, response);
+            page = "logout.html";
 
         }else{
-//            response.sendRedirect("http://www.corendon.nl");
+//            page = "https://www.corendon.nl";
         }
-
+        RequestDispatcher dd=request.getRequestDispatcher(page);
+        dd.forward(request, response);
 
 
 
